@@ -8,7 +8,9 @@
 
 @import Foundation;
 @import Security;
-@import ObjectiveDropboxOfficial;
+//@import ObjectiveDropboxOfficial;
+// We Import the Dropbox code via another cocoapod, so don't link with the framework file, just include the headers
+#import <ObjectiveDropboxOfficial.h>
 
 
 NS_ASSUME_NONNULL_BEGIN
