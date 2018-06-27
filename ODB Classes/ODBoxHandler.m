@@ -242,7 +242,8 @@ const struct ODBFileDictionaryKeys ODBFileKeys = {
     NSLog(@"[ODBoxHandler] Beginning file fetch...");
     
     if ([parentDirectory isEqualToString:@"/"]) parentDirectory = @"";
-    [[self.mainClient.filesRoutes listFolder:parentDirectory recursive:@NO includeMediaInfo:@NO includeDeleted:@NO includeHasExplicitSharedMembers:@NO] setResponseBlock:^(DBFILESListFolderResult * _Nullable result, DBFILESListFolderError * _Nullable routeError, DBRequestError * _Nullable networkError) {
+    [[self.mainClient.filesRoutes listFolder:parentDirectory recursive:@NO includeMediaInfo:@NO includeDeleted:@NO includeHasExplicitSharedMembers:@NO includeMountedFolders:nil limit:nil sharedLink:nil includePropertyGroups:nil]
+     setResponseBlock:^(DBFILESListFolderResult * _Nullable result, DBFILESListFolderError * _Nullable routeError, DBRequestError * _Nullable networkError) {
         NSLog(@"[ODBoxHandler] Returned from file fetch.");
         if (result) {
             NSLog(@"[ODBoxHandler] New file list with %i entries", (int)result.entries.count);
