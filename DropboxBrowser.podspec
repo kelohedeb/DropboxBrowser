@@ -22,6 +22,6 @@ Dropbox Browser provides a simple and effective way to browse, search, and downl
   s.resource  = "DropboxMedia.xcassets"
 
   s.requires_arc = true
-  s.dependency "ObjectiveDropboxOfficial", "~> 3.8"
+  s.dependency "ObjectiveDropboxOfficial", "~> 3.8.0"
 
 end
